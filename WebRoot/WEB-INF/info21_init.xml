@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+ * Specifies the full path to your info21Home directory.
+ * This file must be in the classpath of your application
+ * server.
+ *
+ * For unix this might be:
+ * <info21Home>/var/web/info21Home</info21Home>
+ *
+ * For Windows this might be:
+ * <info21Home>c:\web\info21Home</info21Home>
+-->
+<info21Home>E:\Java\workspace9\RiskTask\info21Home_gardens</info21Home>

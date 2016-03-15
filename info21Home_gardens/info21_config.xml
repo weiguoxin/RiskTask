@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file stores all properties need by info21Web. Property names must be in the
+    format: "prop.name.is.blah=value"
+    That will be stored as:
+        <prop>
+            <name>
+                <is>
+                    <blah>value</blah>
+                </is>
+            </name>
+        </prop>
+-->
+<!-- root element, all properties must be under this element -->
+<config>
+    <!-- When setup is false, you can access the setup tool. -->
+    <setup>true</setup>
+    <appServer>tomcat</appServer>
+    <encoding>GBK</encoding>
+    <AuthType />    <superAdmin>admin</superAdmin>
+    <userTable>sys_user</userTable>
+    <encryptPassword>true</encryptPassword>
+    <filterUrl>true</filterUrl>
+    <publicUrl>gardens;/res/;index.jsp;Logout.jsp;shownotice.jsp;</publicUrl>
+    <AuthFactory>
+        <className>cn.com.info21.auth.db.DbAuthFactory</className>
+    </AuthFactory>
+    <UserManager>
+        <className>cn.com.info21.system.dbauth.DbUserManager</className>
+    </UserManager>
+    <GroupManager>
+        <className>cn.com.info21.system.dbauth.DbGroupManager</className>
+    </GroupManager>
+    <database>
+        <defaultProvider>
+            <driver>oracle.jdbc.driver.OracleDriver</driver>
+            <serverURL>jdbc:oracle:oci8:@dev</serverURL>
+            <username>guifei</username>
+            <password>password</password>
+        </defaultProvider>
+        <JNDIProvider>
+            <name>java:comp/env/jdbc/fis</name>
+        </JNDIProvider>
+    </database>
+    <fuel>
+        <factoryCode>414901</factoryCode>
+        <eletricity>
+            <file>d:/fdl.txt</file>
+            <runTime>5</runTime>
+        </eletricity>
+        <reportUpload>
+            <path>d:/report</path>
+            <fileName>hc</fileName>
+        </reportUpload>
+    </fuel>
+    <cookieKey>lGs4P6CencuRC5r</cookieKey>
+	<policy>
+		<brand>info21</brand>
+		<developer>httech</developer>
+	</policy>
+</config>
+

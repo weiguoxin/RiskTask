@@ -1,0 +1,177 @@
+<?xml version="1.0" ?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<!-- Copyright (c) 2002 by ObjectLearn. All Rights Reserved. -->
+<web-app>
+
+	<!-- Remove the comments below to define a servlet.          -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!--     <servlet>                                           -->
+	<!--       <servlet-name>MyServlet</servlet-name>            -->
+	<!--       <servlet-class>examples.MyServlet</servlet-class> -->
+	<!--       <init-param>                                      -->
+	<!--         <param-name>myparam</param-name>                -->
+	<!--         <param-value>12345</param-value>                -->
+	<!--       </init-param>                                     -->
+	<!--     </servlet>                                          -->
+	<!--                                                         -->
+	<!--                                                         -->
+	<!--     <servlet-mapping>                                   -->
+	<!--           <servlet-name>MyServlet</servlet-name>        -->
+	<!--           <url-pattern>/mine/*</url-pattern>            -->
+	<!--     </servlet-mapping>                                  -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+	<filter>
+		<filter-name>SetCharacterEncodingFilter</filter-name>
+		<display-name>SetCharacterEncodingFilter</display-name>
+		<filter-class>cn.com.info21.filter.SetCharacterEncodingFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<display-name>LoginFilter</display-name>
+		<filter-class>cn.com.info21.filter.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SetCharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+	<listener>  
+   	 	<listener-class>com.wgx.listeners.SessionListener</listener-class>  
+	</listener> 
+	<session-config>  
+    	<session-timeout>20</session-timeout>  
+	</session-config>  
+	
+	
+	<servlet>
+		<servlet-name>TaskPackageServices</servlet-name>
+		<servlet-class>
+			cn.com.shasha.services.TaskPackageServices
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>SysMenus</servlet-name>
+		<servlet-class>
+			cn.com.shasha.sys.SysMenus
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SysRoleMenus</servlet-name>
+		<servlet-class>
+			cn.com.shasha.sys.SysRoleMenus
+		</servlet-class>
+	</servlet>	
+	<servlet>
+		<servlet-name>RoleData</servlet-name>
+		<servlet-class>
+			cn.com.shasha.sys.RoleData
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>WLUserData</servlet-name>
+		<servlet-class>
+			cn.com.shasha.sys.WLUserData
+		</servlet-class>
+	</servlet>
+    <servlet>
+        <servlet-name>TaskManData</servlet-name>
+        <servlet-class>
+            cn.com.shasha.sys.TaskManData
+        </servlet-class>
+    </servlet>
+	<servlet>
+		<servlet-name>TasksData</servlet-name>
+		<servlet-class>
+			cn.com.shasha.services.TasksData
+		</servlet-class>
+	</servlet>	
+		<servlet>
+		<servlet-name>TasksTempData</servlet-name>
+		<servlet-class>
+			cn.com.shasha.services.TasksTempData
+		</servlet-class>
+	</servlet>	
+	<servlet>
+		<servlet-name>FileServlet</servlet-name>
+		<servlet-class>
+			cn.com.wgx.action.FileUpLoadAction
+		</servlet-class>
+		 <init-param>
+	    	<param-name>filePath</param-name>
+	   		<param-value>uploadfile/</param-value>
+	   	</init-param>
+	   	<init-param>
+	    	<param-name>tempPath</param-name>
+	    	<param-value>uploadtemp/</param-value>
+	   	</init-param>
+	   	<init-param>
+	    	<param-name>FileMaxLong</param-name>
+	    	<param-value>1024*1024*100</param-value>
+	   	</init-param>
+	</servlet>	
+	<servlet>
+        <servlet-name>XingZhengTasksServices</servlet-name>
+        <servlet-class>
+            cn.com.shasha.services.XingZhengTasksServices
+        </servlet-class>
+    </servlet>
+	
+	
+	
+	<servlet-mapping>
+		<servlet-name>XingZhengTasksServices</servlet-name>
+		<url-pattern>/XingZhengTasks</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TaskPackageServices</servlet-name>
+		<url-pattern>/TaskPackageServices</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FileServlet</servlet-name>
+		<url-pattern>/FileAction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SysMenus</servlet-name>
+		<url-pattern>/SysMenus</url-pattern>
+	</servlet-mapping>	
+	<servlet-mapping>
+		<servlet-name>SysRoleMenus</servlet-name>
+		<url-pattern>/SysRoleMenus</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RoleData</servlet-name>
+		<url-pattern>/RoleData</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WLUserData</servlet-name>
+		<url-pattern>/WLUserData</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TasksData</servlet-name>
+		<url-pattern>/TasksData</url-pattern>
+	</servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TaskManData</servlet-name>
+        <url-pattern>/TaskManData</url-pattern>
+    </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>TasksTempData</servlet-name>
+        <url-pattern>/TasksTempData</url-pattern>
+    </servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error.jsp</location>
+	</error-page>
+
+</web-app>
